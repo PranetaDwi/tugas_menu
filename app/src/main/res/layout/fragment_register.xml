@@ -126,7 +126,7 @@
         android:layout_below="@+id/checkbox"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:background="@color/black"
+        android:background="@color/teal_700"
         android:text="Register"
         android:textSize="20sp"
         android:textColor="@color/white"
@@ -148,11 +148,12 @@
         android:layout_height="wrap_content"
         android:text="Log In"
         android:onClick="openRegisterActivity"
-        android:textColor="@color/black"
+        android:textColor="@color/blue"
         android:layout_alignTop="@+id/haveaccount"
         android:layout_marginLeft="2dp"
         android:layout_toEndOf="@+id/haveaccount"
         android:clickable="true"
+        android:textStyle="bold"
         />
 
 </RelativeLayout>

@@ -1,10 +1,13 @@
 package com.neta.tugas_menu
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,6 +29,7 @@ class LoginFragment : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
@@ -34,8 +38,21 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        val view = inflater.inflate(R.layout.fragment_login, container, false)
+
+        val button = view.findViewById<Button>(R.id.login_button)
+        val usernameinput = view.findViewById<EditText>(R.id.username2)
+
+        button.setOnClickListener{
+            val intent = Intent(activity, WelcomeActivity::class.java)
+            val username = usernameinput.text.toString()
+            intent.putExtra("username", username )
+            startActivity(intent)
+        }
+        return view
     }
+
+
 
     companion object {
         /**
