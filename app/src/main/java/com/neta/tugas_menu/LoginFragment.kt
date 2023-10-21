@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,12 +43,20 @@ class LoginFragment : Fragment() {
 
         val button = view.findViewById<Button>(R.id.login_button)
         val usernameinput = view.findViewById<EditText>(R.id.username2)
+        val passwordinput = view.findViewById<EditText>(R.id.password_username)
 
         button.setOnClickListener{
-            val intent = Intent(activity, WelcomeActivity::class.java)
             val username = usernameinput.text.toString()
-            intent.putExtra("username", username )
-            startActivity(intent)
+            val pw = passwordinput.text.toString()
+
+            if (username.equals("neta") && pw.equals("haha1234")){
+                Toast.makeText(activity, "Login Successfull", Toast.LENGTH_LONG).show()
+                val intent = Intent(activity, WelcomeActivity::class.java)
+                intent.putExtra("username", username )
+                startActivity(intent)
+            } else{
+                Toast.makeText(activity, "Login Unsuccessfull", Toast.LENGTH_LONG).show()
+            }
         }
         return view
     }

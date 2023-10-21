@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -39,9 +41,13 @@ class RegisterFragment : Fragment() {
         val view =  inflater.inflate(R.layout.fragment_register, container, false)
 
         val button = view.findViewById<Button>(R.id.register2)
+        val usernameinput = view.findViewById<EditText>(R.id.username_input)
 
         button.setOnClickListener{
+            val username = usernameinput.text.toString()
+            Toast.makeText(activity, "Register Successfull", Toast.LENGTH_LONG).show()
             val intent = Intent(activity, WelcomeActivity::class.java)
+            intent.putExtra("username", username)
             startActivity(intent)
         }
 

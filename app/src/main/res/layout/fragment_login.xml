@@ -57,6 +57,7 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_username"
             android:layout_width="900px"
             android:layout_height="150px"
             android:hint="Password"/>
